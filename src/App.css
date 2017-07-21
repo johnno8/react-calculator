@@ -1,0 +1,67 @@
+.App {
+     text-align: center;
+   }
+
+.App-header {
+  height: 120px;
+  padding: 20px;
+  color: white;
+}
+
+.Calculator {
+  text-align: center;
+  height: 380px;
+  width: 320px;
+  /*width: 400px;*/
+  background-color: #2495BF;
+  margin: auto;
+  border: 20px solid #2495BF;
+}
+
+.Display {
+  margin: auto;
+  height: 80px;
+  width: 100%;
+  /*width: 80%;*/
+  line-height: 80px;
+  border-bottom: 5px solid #2495BF; /*scheme4*/
+  text-align: right;
+  text-indent: 5px;
+  /*overflow: scroll;*/
+  /*white-space: nowrap;*/
+  /*text-overflow: clip;*/
+  font-size: 200%;
+  background-color: white;
+
+  /*float: right;*/
+}
+
+.Display:hover {
+  overflow: visible;
+}
+
+.Row {
+  margin: auto;
+  height: 80px;
+  width: 90%;
+  display: inline;
+}
+
+.Digit {
+  height: 60px;
+  width: 25%;
+  display: inline;
+  float: left;
+  line-height: 60px;
+  font-size: 150%;
+  background-color: white;
+  border-bottom: 1px solid #2495BF;
+}
+
+.Digit:hover {
+  background-color: lightgrey;
+}
+
+.Digit:focus {
+  outline: none;
+}
