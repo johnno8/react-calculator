@@ -71,12 +71,12 @@ class App extends Component {
       //     })
       //   }
       default:
-        if (this.state.afterAnswer){
+        if (this.state.afterAnswer && this.state.currentValue.length < 17){
           this.setState({
             currentValue: '' + event.target.value,
             afterAnswer: false
           })
-        } else {
+        } else if(this.state.currentValue.length < 17){
           this.setState({
             currentValue: this.state.currentValue + event.target.value
           })
