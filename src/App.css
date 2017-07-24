@@ -3,14 +3,14 @@
    }
 
 .App-header {
-  height: 120px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
 
 .Calculator {
   text-align: center;
-  height: 380px;
+  height: 440px;
   width: 320px;
   /*width: 400px;*/
   background-color: #2495BF;
@@ -51,11 +51,12 @@
   height: 60px;
   width: 25%;
   display: inline;
-  float: left;
+  /*float: left;*/
   line-height: 60px;
   font-size: 150%;
   background-color: white;
   border-bottom: 1px solid #2495BF;
+  clear: right;
 }
 
 .Digit:hover {

@@ -38,6 +38,14 @@ class App extends Component {
           //expression: this.state.expression + curVal
         })
         break
+      case "+/-":
+        if(this.state.afterAnswer || this.state.currentValue.length === 0) {
+          this.setState({
+            currentValue: '' + '-',
+            afterAnswer: false
+          })
+        }
+        break
       case "=":
         let expr = this.state.expression + this.state.currentValue //+ event.target.value
           console.log('expr: ' + expr)
@@ -97,16 +105,30 @@ class App extends Component {
               />
             <div className="Row">
               <Digit
-                  value="M+"
+                  value="x^2"
                   handleInput={this.handleClick}/>
               <Digit
-                  value="MC"
+                  value="Mod"
                   handleInput={this.handleClick}/>
               <Digit
                   value="BSp"
                   handleInput={this.handleClick}/>
               <Digit
                   value="C"
+                  handleInput={this.handleClick}/>
+            </div>
+            <div className="Row">
+              <Digit
+                  value="M+"
+                  handleInput={this.handleClick}/>
+              <Digit
+                  value="MR"
+                  handleInput={this.handleClick}/>
+              <Digit
+                  value="MC"
+                  handleInput={this.handleClick}/>
+              <Digit
+                  value="+/-"
                   handleInput={this.handleClick}/>
             </div>
             <div className="Row">
