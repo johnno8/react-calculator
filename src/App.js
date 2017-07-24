@@ -7,6 +7,7 @@ class App extends Component {
     this.state = {
       currentValue: '',
       expression: '',
+      memory: '',
       afterAnswer: false
     }
   }
@@ -45,6 +46,32 @@ class App extends Component {
             afterAnswer: false
           })
         }
+        break
+      case "M+":
+        this.setState({
+          memory: this.state.currentValue
+        })
+        break
+      case "MR":
+        this.setState({
+          currentValue: this.state.memory
+        })
+        break
+      case "MC":
+        this.setState({
+          memory: ''
+        })
+        break
+      case "x^2":
+        this.setState({
+          currentValue: this.state.currentValue * this.state.currentValue
+        })
+        break
+      case "Mod":
+        this.setState({
+          expression: this.state.expression + this.state.currentValue + '%',
+          currentValue: '',
+        })
         break
       case "=":
         let expr = this.state.expression + this.state.currentValue //+ event.target.value
