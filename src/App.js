@@ -12,37 +12,21 @@ class App extends Component {
     }
   }
 
-  /*
-  handleClick = (event) => {
-    if(event.target.value !== "=") {
-      this.setState({
-        currentValue: this.state.currentValue + event.target.value
-      })
-    } else {
-      //parse this.state.currentValue
-      this.setState({
-        currentValue: eval(this.state.currentValue)
-      })
-    }
-  } */
-
   handleClick = (event) => {
     switch(event.target.value) {
       case "+":
       case "-":
       case "*":
       case "/":
-        //let curVal = this.state.currentValue + event.target.value
         this.setState({
           expression: this.state.expression + this.state.currentValue + event.target.value,
           currentValue: '',
-          //expression: this.state.expression + curVal
         })
         break
       case "+/-":
         if(this.state.afterAnswer || this.state.currentValue.length === 0) {
           this.setState({
-            currentValue: '' + '-',
+            currentValue: '-',
             afterAnswer: false
           })
         }
@@ -74,11 +58,9 @@ class App extends Component {
         })
         break
       case "=":
-        let expr = this.state.expression + this.state.currentValue //+ event.target.value
+        let expr = this.state.expression + this.state.currentValue
           console.log('expr: ' + expr)
         this.setState({
-          //expression: this.state.expression + this.state.currentValue + event.target.value,
-          //currentValue: eval(this.state.expression + this.state.currentValue + event.target.value)
           expression: '',
           currentValue: eval(expr),
           afterAnswer: true
@@ -95,16 +77,6 @@ class App extends Component {
           currentValue: this.state.currentValue.substring(0, this.state.currentValue.length - 1)
         })
         break
-      // default:
-      //   if(this.state.currentValue && this.state.currentValue.length < 17) {
-      //     this.setState({
-      //       currentValue: this.state.currentValue + event.target.value
-      //     })
-      //   } else {
-      //     this.setState({
-      //       currentValue: '' + event.target.value
-      //     })
-      //   }
       default:
         if (this.state.afterAnswer && this.state.currentValue.length < 17){
           this.setState({
@@ -132,29 +104,37 @@ class App extends Component {
               />
             <div className="Row">
               <Digit
+                  className="Function"
                   value="x^2"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Function"
                   value="Mod"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Function"
                   value="BSp"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Clear"
                   value="C"
                   handleInput={this.handleClick}/>
             </div>
             <div className="Row">
               <Digit
+                  className="Memory"
                   value="M+"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Memory"
                   value="MR"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Memory"
                   value="MC"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Operator"
                   value="+/-"
                   handleInput={this.handleClick}/>
             </div>
@@ -169,6 +149,7 @@ class App extends Component {
                   value="9"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Operator"
                   value="+"
                   handleInput={this.handleClick}/>
             </div>
@@ -183,6 +164,7 @@ class App extends Component {
                   value="6"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Operator"
                   value="-"
                   handleInput={this.handleClick}/>
             </div>
@@ -197,6 +179,7 @@ class App extends Component {
                   value="3"
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Operator"
                   value="*"
                   handleInput={this.handleClick}/>
             </div>
@@ -211,6 +194,7 @@ class App extends Component {
                   value="="
                   handleInput={this.handleClick}/>
               <Digit
+                  className="Operator"
                   value="/"
                   handleInput={this.handleClick}/>
             </div>
@@ -226,8 +210,9 @@ class Digit extends Component {
   }
 
   render() {
+    const classNames = 'Digit ' + this.props.className
     return(
-        <button className="Digit" value={this.props.value} onClick={this.props.handleInput}>
+        <button className={classNames} value={this.props.value} onClick={this.props.handleInput}>
           {this.props.value}
         </button>
     )

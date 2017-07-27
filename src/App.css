@@ -12,28 +12,21 @@
   text-align: center;
   height: 440px;
   width: 320px;
-  /*width: 400px;*/
-  background-color: #2495BF;
+  background-color: #477890;
   margin: auto;
-  border: 20px solid #2495BF;
+  border: 20px solid #477890;
 }
 
 .Display {
   margin: auto;
   height: 80px;
   width: 100%;
-  /*width: 80%;*/
   line-height: 80px;
-  border-bottom: 5px solid #2495BF; /*scheme4*/
+  border-bottom: 5px solid #477890;
   text-align: right;
   text-indent: 5px;
-  /*overflow: scroll;*/
-  /*white-space: nowrap;*/
-  /*text-overflow: clip;*/
   font-size: 200%;
   background-color: white;
-
-  /*float: right;*/
 }
 
 .Display:hover {
@@ -51,16 +44,47 @@
   height: 60px;
   width: 25%;
   display: inline;
-  /*float: left;*/
   line-height: 60px;
   font-size: 150%;
   background-color: white;
-  border-bottom: 1px solid #2495BF;
+  border-bottom: 1px solid #477890;
   clear: right;
+}
+
+.Function {
+  background-color: #4C86A8;
+}
+
+.Memory {
+  background-color: #E0777D;
+}
+
+.Operator {
+  background-color: #E1DD8F;
+}
+
+.Clear {
+  background-color: #8E3B46;
 }
 
 .Digit:hover {
   background-color: lightgrey;
+}
+
+.Function:hover {
+  background-color: #2071A1;
+}
+
+.Memory:hover {
+  background-color: #DE5B62;
+}
+
+.Operator:hover {
+  background-color: #CFCA76;
+}
+
+.Clear:hover {
+  background-color: darkred;
 }
 
 .Digit:focus {
