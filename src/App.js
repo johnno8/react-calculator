@@ -86,11 +86,22 @@ class App extends Component {
         })
         break
       default:
-        if (this.state.afterAnswer && this.state.currentValue.length < 17){
-          this.setState({
-            currentValue: '' + event.target.value,
-            afterAnswer: false
-          })
+        if (this.state.afterAnswer){
+          if(event.target.value === '+'
+              || event.target.value === '-'
+              || event.target.value === '*'
+              || event.target.value === '/'
+              || event.target.value === '%') {
+            this.setState({
+              expression: this.state.currentValue + event.target.value,
+              currentValue: ''
+            })
+          } else {
+            this.setState({
+              currentValue: '' + event.target.value,
+              afterAnswer: false
+            })
+          }
         } else if(this.state.currentValue.length < 17){
           this.setState({
             currentValue: this.state.currentValue + event.target.value
