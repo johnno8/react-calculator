@@ -60,11 +60,19 @@ class App extends Component {
       case "=":
         let expr = this.state.expression + this.state.currentValue
           console.log('expr: ' + expr)
-        this.setState({
-          expression: '',
-          currentValue: eval(expr),
-          afterAnswer: true
-        })
+        if(expr[expr.length -1] !== '+'
+            && expr[expr.length -1] !== '-'
+            && expr[expr.length -1] !== '*'
+            && expr[expr.length -1] !== '/'
+            && expr[expr.length -1] !== '.'
+            && expr[expr.length -1] !== '%'
+            && expr[expr.length -1] !== null) {
+          this.setState({
+            expression: '',
+            currentValue: eval(expr),
+            afterAnswer: true
+          })
+        }
         break
       case "C":
         this.setState({
