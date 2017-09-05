@@ -223,32 +223,20 @@ class App extends Component {
   }
 }
 
-class Digit extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const classNames = 'Digit ' + this.props.className
-    return(
-        <button className={classNames} value={this.props.value} onClick={this.props.handleInput}>
-          {this.props.value}
-        </button>
-    )
-  }
+function Digit(props) {
+  const classNames = 'Digit ' + props.className
+  return(
+      <button className={classNames} value={props.value} onClick={props.handleInput}>
+        {props.value}
+      </button>
+  )
 }
 
-class Display extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return(
-        <div className="Display">
-          {this.props.input}
-        </div>
-    )
-  }
+function Display(props) {
+  return(
+      <div className="Display">
+        {props.input}
+      </div>
+  )
 }
-
 export default App;
