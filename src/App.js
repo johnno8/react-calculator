@@ -110,112 +110,60 @@ class App extends Component {
     }
   }
 
+  renderDigit(name, val) {
+    return (
+        <Digit className={name}
+               value={val}
+               handleInput={this.handleClick}
+        />
+    )
+  }
+
   render () {
     return(
-
         <div className="App">
           <div className="App-header">
             <h1>React Javascript Calculator</h1>
           </div>
           <div className="Calculator">
             <Display
-              input={this.state.currentValue}
-              />
+                input={this.state.currentValue}
+            />
             <div className="Row">
-              <Digit
-                  className="Function"
-                  value="x^2"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Function"
-                  value="Mod"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Function"
-                  value="BSp"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Clear"
-                  value="C"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('Function', 'x^2')}
+              {this.renderDigit('Function', 'Mod')}
+              {this.renderDigit('Function', 'BSp')}
+              {this.renderDigit('Clear', 'C')}
             </div>
             <div className="Row">
-              <Digit
-                  className="Memory"
-                  value="M+"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Memory"
-                  value="MR"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Memory"
-                  value="MC"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Operator"
-                  value="+/-"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('Memory', 'M+')}
+              {this.renderDigit('Memory', 'MR')}
+              {this.renderDigit('Memory', 'MC')}
+              {this.renderDigit('Operator', '+/-')}
             </div>
             <div className="Row">
-              <Digit
-                  value="7"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="8"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="9"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Operator"
-                  value="+"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('', '7')}
+              {this.renderDigit('', '8')}
+              {this.renderDigit('', '9')}
+              {this.renderDigit('Operator', '+')}
             </div>
             <div className="Row">
-              <Digit
-                  value="4"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="5"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="6"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Operator"
-                  value="-"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('', '4')}
+              {this.renderDigit('', '5')}
+              {this.renderDigit('', '6')}
+              {this.renderDigit('Operator', '-')}
             </div>
             <div className="Row">
-              <Digit
-                  value="1"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="2"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="3"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Operator"
-                  value="*"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('', '1')}
+              {this.renderDigit('', '2')}
+              {this.renderDigit('', '3')}
+              {this.renderDigit('Operator', '*')}
             </div>
             <div className="Row">
-              <Digit
-                  value="."
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="0"
-                  handleInput={this.handleClick}/>
-              <Digit
-                  value="="
-                  handleInput={this.handleClick}/>
-              <Digit
-                  className="Operator"
-                  value="/"
-                  handleInput={this.handleClick}/>
+              {this.renderDigit('', '.')}
+              {this.renderDigit('', '0')}
+              {this.renderDigit('', '=')}
+              {this.renderDigit('Operator', '/')}
             </div>
           </div>
         </div>
